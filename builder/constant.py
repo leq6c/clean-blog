@@ -2,7 +2,8 @@ import os
 
 
 def get_template_dir():
-    return "builder/template"
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    return os.path.join(dir_path, "template")
 
 
 def get_template_static_dir():
