@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{metadata.title}}</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- selector -->
+        <input id="menu-posts" class="{{posts-class}}" type="radio" name="menu" checked>
+        <input id="menu-works" class="{{works-class}}" type="radio" name="menu">
+        <input id="menu-design" class="{{design-class}}" type="radio" name="menu">
+
+        <header>
+            <h1 class="text-size-500 posts {{posts-class}}">Posts</h1>
+            <h1 class="text-size-500 works {{works-class}}">Works</h1>
+            <h1 class="text-size-500 design {{design-class}}">Design</h1>
+            <p class="caption"></p>
+        </header>
+
+        <nav>
+            <label class="menu {{posts-class}}" for="menu-posts">Posts</label>
+            <label class="menu {{works-class}}" for="menu-works">Works</label>
+            <label class="menu {{design-class}}" for="menu-design">Design</label>
+        </nav>
+
+        <main>
+            <section id="posts" class="{{posts-class}}">
+                {{posts}}
+            </section>
+            <section id="works" class="{{works-class}}">
+                {{works}}
+            </section>
+            <section id="design" class="{{design-class}}">
+                <div>
+                    {{design}}
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            {{metadata.footer}} - <a href="{{metadata.github}}" target="_blank">GitHub</a> | <a href="mailto:{{metadata.email}}">Email</a>
+        </footer>
+    </div>
+</body>
+
+</html>

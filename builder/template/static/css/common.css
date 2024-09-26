@@ -1,0 +1,37 @@
+html {
+    --text-color: #dcdcdc;
+    --background-color: #1e1e2e;
+    --list-item-color: #cdd6f4;
+    --list-item-date-color: #6c7086;
+    --footer-text-color: #6c7086;
+    --footer-link-color: #a6adc8;
+    --link-color: #1e8cd7;
+    --scrollbar-color: #57585e;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: var(--link-color);
+}
+
+/* footer */
+footer {
+    font-size: 0.8rem;
+    padding-top: 32px;
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: var(--footer-text-color);
+}
+footer a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,251 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    max-width: 640px;
+    width: 100%;
+    padding: 32px;
+}
+
+/* header */
+h1 {
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.caption {
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+/* footer */
+footer {
+    margin-top: 0px;
+}
+
+/* tabs */
+nav {
+    display: flex;
+    padding-bottom: 1.2rem;
+}
+
+.menu {
+    line-height: 32px;
+    text-align: center;
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 64px;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    font-size: var(--text-size-100);
+}
+
+.menu:hover {
+    opacity: 0.75;
+}
+
+input[name="menu"] {
+    display: none;
+}
+
+/* main */
+main {
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* tabs content */
+section {
+    display: none;
+    margin-top: 12px;
+}
+
+header > h1 {
+    display: none;
+}
+
+#menu-works:checked ~ header > .works,
+#menu-posts:checked ~ header > .posts,
+#menu-design:checked ~ header > .design,
+#menu-about:checked ~ header > .about {
+    display: block;
+}
+
+#menu-works:checked ~ main > #works,
+#menu-posts:checked ~ main > #posts,
+#menu-design:checked ~ main > #design,
+#menu-about:checked ~ main > #about {
+    display: block;
+}
+
+/* works, posts */
+#works, #posts {
+    > div {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 0.5em;
+
+        .title {
+            color: var(--list-item-color);
+            font-size: 1em;
+            font-weight: 400;
+        }
+        .date {
+            color: var(--list-item-date-color);
+            font-size: 0.9em;
+            white-space: pre;
+        }
+    }
+}
+
+/* works */
+#works > div > .title {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* posts */
+#posts {
+    > div {
+        flex-direction: column-reverse;
+        align-items: normal;
+
+        > .date {
+            font-size: 0.8em;
+        }
+
+        > .title {
+            font-size: 1.1em;
+            color: var(--link-color);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        > .title:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* design */
+#design {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: calc(100vw - 52px);
+}
+#design > div {
+    position: relative;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: [col0] 150px  [col1] 72px  [col2] 165px [col3] 195px [col4] 150px [col5] 72px [col6] 105px [col7];
+    grid-template-rows: [row0] 150px [row1] 150px [row2];
+    padding: 8px 0;
+
+    .tile {
+        position: relative;
+        background-color: #444;
+        border-radius: 4px;
+        overflow: hidden;
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+
+    .tile::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.6;
+        border-radius: 4px;
+    }
+
+    .tile:hover::after {
+        opacity: 0.2;
+    }
+
+    .a {
+        grid-column: col0 / col1;
+        grid-row: row0 ;
+    }
+    .b {
+        grid-column: col1 / col3;
+        grid-row: row0;
+    }
+    .c {
+        grid-column: col0 / col2;
+        grid-row: row1;
+    }
+    .d {
+        grid-column: col2 / col3;
+        grid-row: row1;
+    }
+    .e {
+        grid-column: col3 / col4;
+        grid-row: row0 / row2;
+    }
+    .f {
+        grid-column: col4 / col6;
+        grid-row: row0;
+    }
+    .g {
+        grid-column: col6 / col7;
+        grid-row: row0;
+    }
+    .h {
+        grid-column: col4 / col5;
+        grid-row: row1;
+    }
+    .i {
+        grid-column: col5 / col7;
+        grid-row: row1;
+    }
+}
+
+#design::-webkit-scrollbar, main::-webkit-scrollbar {
+    background-color: transparent;
+    height: 6px;
+    width: 6px;
+    cursor: pointer;
+}
+#design::-webkit-scrollbar-track, main::-webkit-scrollbar-track {
+    background-color: transparent;
+    cursor: pointer;
+}
+#design::-webkit-scrollbar-thumb, main::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 120px;
+    border: 4px solid var(--scrollbar-color);
+    cursor: pointer;
+}
+
+/* about */
+#about {
+    font-weight: 400;
+}
