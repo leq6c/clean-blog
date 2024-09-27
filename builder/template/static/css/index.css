@@ -23,6 +23,7 @@ h1 {
     font-weight: 100;
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 .caption {
@@ -52,6 +53,18 @@ nav {
     font-weight: 100;
     letter-spacing: 0.1em;
     font-size: var(--text-size-100);
+}
+
+@media (max-width: 520px) {
+    .menu {
+        margin-right: 32px;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu {
+        margin-right: 16px;
+    }
 }
 
 .menu:hover {
@@ -119,6 +132,13 @@ header > h1 {
 #works > div > .title {
     font-size: 0.9em;
     opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    #works > div {
+        flex-direction: column-reverse;
+        align-items: baseline;
+    }
 }
 
 /* posts */
