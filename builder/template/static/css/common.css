@@ -1,11 +1,11 @@
 html {
     --text-color: #dcdcdc;
     --background-color: #1e1e2e;
-    --list-item-color: #cdd6f4;
+    --list-item-color: #fff;
     --list-item-date-color: #6c7086;
     --footer-text-color: #6c7086;
     --footer-link-color: #a6adc8;
-    --link-color: #1e8cd7;
+    --link-color: #00b3ff;
     --scrollbar-color: #57585e;
 }
 
